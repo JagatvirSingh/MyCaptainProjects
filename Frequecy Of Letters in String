@@ -1,0 +1,19 @@
+def get_second_element(d):
+	return d[1]
+
+def most_frequent(x):
+	x = x.lower()
+	d = dict()
+	for i in x:
+		if i in d.keys():
+			d[i] = d[i]+1
+		else:
+			d[i]=1
+
+	d = sorted(d.items(),key=get_second_element,reverse=1)
+	for i,j in d:
+		print(i+" = "+str(j))
+
+
+s = input("Please enter a string\n")
+most_frequent(s)
